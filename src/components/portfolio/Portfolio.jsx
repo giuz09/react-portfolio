@@ -59,58 +59,22 @@ const Portfolio = () => {
       <h2>Portfolio</h2>
       
       <div className="container portfolio__container">
-        <article className='portfolio__item'>
-          <div className="portfolio__item-image">
-            <img src={IMG1} alt='portfolio 1'/>
-            <h3>This is a portfolio item title</h3>
-            <div className="portfolio__item-cta">
-              <a href="https://github.com" className='btn' target='_blank'>Github</a>
-              <a href="https://dribbble.com" className='btn btn-primary' target='_blank'>Live Demo</a>
-            </div>
-          </div>
-        </article>
-
-
-        <article className='portfolio__item'>
-          <div className="portfolio__item-image">
-            <img src={IMG1} alt='portfolio 1'/>
-            <h3>This is a portfolio item title</h3>
-            <div className="portfolio__item-cta">
-              <a href="https://github.com" className='btn' target='_blank'></a>
-              <a href="https://dribbble.com" className='btn btn-primary' target='_blank'>Live Demo</a>
-            </div>
-          </div>
-        </article>
-        <article className='portfolio__item'>
-          <div className="portfolio__item-image">
-            <img src={IMG1} alt='portfolio 1'/>
-            <h3>This is a portfolio item title</h3>
-            <div className="portfolio__item-cta">
-              <a href="https://github.com" className='btn' target='_blank'></a>
-              <a href="https://dribbble.com" className='btn btn-primary' target='_blank'>Live Demo</a>
-            </div>
-          </div>
-        </article>
-        <article className='portfolio__item'>
-          <div className="portfolio__item-image">
-            <img src={IMG1} alt='portfolio 1'/>
-            <h3>This is a portfolio item title</h3>
-            <div className="portfolio__item-cta">
-              <a href="https://github.com" className='btn' target='_blank'></a>
-              <a href="https://dribbble.com" className='btn btn-primary' target='_blank'>Live Demo</a>
-            </div>
-          </div>
-        </article>
-        <article className='portfolio__item'>
-          <div className="portfolio__item-image">
-            <img src={IMG1} alt='portfolio 1'/>
-            <h3>This is a portfolio item title</h3>
-            <div className="portfolio__item-cta">
-              <a href="https://github.com" className='btn' target='_blank'></a>
-              <a href="https://dribbble.com" className='btn btn-primary' target='_blank'>Live Demo</a>
-            </div>
-          </div>
-        </article>
+        {
+          data.map(({id, image, title, github, demo}) => {
+            return (
+              <article key={id} className='portfolio__item'>
+              <div className="portfolio__item-image">
+                <img src={image} alt={title}/>
+                <h3>This is a portfolio item title</h3>
+                <div className="portfolio__item-cta">
+                  <a href={github} className='btn' target='_blank'>Github</a>
+                  <a href={demo} className='btn btn-primary' target='_blank'>Live Demo</a>
+                </div>
+              </div>
+            </article>
+            )
+          })
+        }
         
       </div>
     </section>
